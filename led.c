@@ -13,11 +13,11 @@ DDRB |= 1 << PINB0;
 while (1) {
   /* code */
 
-  PORTB |= 1 << PINB0; // Shift 1 zero to the left, or operation
-  _delay_ms(800); // Delay of 800ms
-  PORTB &= ~(1 << PINB0); // Assinging 0v to pin 0
-  _delay_ms(800); // Delay of 800ms
+  // Using ex-or operation to switch the last bit
+  // to zero and back to one
+  PORTB ^= 1 << PINB0;
 
+  _delay_ms(800); // Delay of 800ms
   }
 return 0;
 }
