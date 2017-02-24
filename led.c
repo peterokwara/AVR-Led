@@ -5,9 +5,9 @@
 #include <util/delay.h>
 
 int main(void) {
-// Data direction register and assigning pin 0
-// on Port B to output
-DDRB = 0b00000001;
+// OR operation, assign Port B to output in the
+// data direction register
+DDRB |= 0b00000001;
 
 while (1) {
   /* code */
